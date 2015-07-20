@@ -1,3 +1,12 @@
+current_branch () {
+  branch_name="$(git symbolic-ref HEAD 2>/dev/null)" ||
+  branch_name="(unnamed branch)"     # detached HEAD
+
+  branch_name=${branch_name##refs/heads/}
+
+  echo "$branch_name"
+}
+
 alias g='git'
 
 alias ga='git add'
@@ -34,7 +43,7 @@ alias gcs='git commit -S'
 
 alias gd='git diff'
 alias gdca='git diff --cached'
-alias gdt='git diff-tree --no-commit-id --name-only -r'
+curalias gdt='git diff-tree --no-commit-id --name-only -r'
 alias gdw='git diff --word-diff'
 
 alias gf='git fetch'
