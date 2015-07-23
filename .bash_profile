@@ -6,6 +6,12 @@ if [ -f $DOTFILES_PATH/.bashrc ]; then
 	. $DOTFILES_PATH/.bashrc
 fi
 
+# git completion
+
+if [ -f $DOTFILES_PATH/.git-completion.bash ]; then
+  . $DOTFILES_PATH/.git-completion.bash
+fi
+
 # git aliases from oh-my-zsh
 
 if [ -f $DOTFILES_PATH/.aliases_git ]; then
